@@ -1,0 +1,11 @@
+/* simple styles for the components */
+.kyc-upload, .kyc-dashboard { padding:24px; color: #fff; background: #041224; min-height:400px; }
+.file-row { display:flex; gap:20px; margin-top:12px; }
+.file-box { background:#071826; padding:12px; border-radius:8px; width:360px; }
+.extracted { margin-top:8px; background:#0b2b35; padding:10px; border-radius:6px; }
+.card-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap:16px; margin-top:12px; }
+.card { background:#072531; padding:12px; border-radius:8px; }
+.modal { position:fixed; left:0; right:0; top:0; bottom:0; background:rgba(0,0,0,0.6); display:flex; align-items:center; justify-content:center; }
+.modal-inner { background:#012227; padding:20px; border-radius:8px; width:80%; max-width:900px; color:#fff; }
+button { background:#00d1b2; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; }
+button:disabled { opacity:0.6; cursor:not-allowed; }

@@ -1,0 +1,72 @@
+/* src/styles/FraudDashboard.css */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+:root{
+  --neon: #00e6e6;
+  --muted: #9aa9ad;
+  --bg: linear-gradient(180deg,#001428 0%, #000 100%);
+}
+*{box-sizing:border-box;font-family:'Poppins',sans-serif}
+.fraud-page{
+  min-height:100vh;
+  background: var(--bg);
+  color: #e6f7f7;
+  padding:28px 16px;
+}
+.max-w-6xl{max-width:1120px;margin:0 auto}
+.fraud-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+}
+.fraud-header h1{font-size:22px;margin-bottom:4px;color:#fff}
+.muted{color:var(--muted)}
+.small{font-size:12px}
+.risk-box{
+  background: rgba(255,255,255,0.03);
+  padding:14px 18px;
+  border-radius:10px;
+  border:1px solid rgba(0,230,230,0.08);
+  text-align:center;
+}
+.risk-box .score-large{
+  font-size:34px;
+  color: #60a5fa;
+  font-weight:700;
+}
+.fraud-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+  margin-bottom:22px;
+}
+@media(min-width:1024px){
+  .fraud-grid{grid-template-columns:2fr 1fr}
+}
+.chart-box{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(0,230,230,0.06);
+  padding:18px;border-radius:12px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.6);
+}
+.chart-title{font-weight:600;color:#eafaff;margin-bottom:12px}
+.chart-meta{margin-top:10px;color:var(--muted);text-align:center}
+
+/* table */
+.records-section{margin-top:24px}
+.records-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.filter-btn{
+  background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);padding:8px 10px;border-radius:8px;margin-left:8px;cursor:pointer;
+}
+.filter-btn.active{background:rgba(0,230,230,0.06);color:#fff;border-color:rgba(0,230,230,0.12)}
+.records-table{overflow:auto;border-radius:12px;background:rgba(0,0,0,0.35);padding:8px;border:1px solid rgba(0,230,230,0.03)}
+table{width:100%;border-collapse:collapse}
+thead th{color:var(--muted);text-align:left;padding:10px 12px;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.03)}
+tbody td{padding:12px;border-bottom:1px solid rgba(255,255,255,0.03);font-size:14px;color:#eafaff}
+.mono{font-family:monospace}
+
+/* badge */
+.badge{display:inline-block;padding:6px 9px;border-radius:999px;font-weight:600;font-size:13px}
+.badge-green{background:rgba(16,185,129,0.12);color:#10B981;border:1px solid rgba(16,185,129,0.12)}
+.badge-yellow{background:rgba(245,158,11,0.08);color:#F59E0B;border:1px solid rgba(245,158,11,0.08)}
+.badge-red{background:rgba(239,68,68,0.08);color:#EF4444;border:1px solid rgba(239,68,68,0.08)}

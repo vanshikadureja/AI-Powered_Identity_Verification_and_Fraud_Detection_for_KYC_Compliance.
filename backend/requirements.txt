@@ -1,0 +1,9 @@
+Flask==2.3.2
+flask-cors==3.0.10
+pillow==10.0.1
+pytesseract==0.3.11
+numpy==1.24.3
+opencv-python-headless==4.7.0.72
+rapidfuzz==2.16.1
+pymongo==4.5.0
+python-dotenv==1.0.0

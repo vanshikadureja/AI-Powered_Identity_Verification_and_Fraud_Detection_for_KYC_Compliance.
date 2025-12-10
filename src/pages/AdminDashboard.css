@@ -1,0 +1,379 @@
+/* ================================
+   GLOBAL STYLES
+================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* wrapper used by the Admin component */
+.admin-bg,
+.admin-page {
+  min-height: 100vh;
+  padding: 30px 24px;
+  background: radial-gradient(circle at top, #001f3f, #000);
+  color: #fff;
+}
+
+/* ================================
+   TITLE
+================================ */
+
+.dashboard-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  color: #00e6e6;
+  margin: 12px 0 32px;
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+}
+
+/* ================================
+   CARDS GRID
+================================ */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 26px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px;
+}
+
+/* ================================
+   USER CARD
+================================ */
+
+.user-card {
+  background: linear-gradient(180deg, rgba(0,0,0,0.52), rgba(0,0,0,0.45));
+  border: 1px solid rgba(0, 255, 255, 0.14);
+  border-radius: 14px;
+  padding: 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 30px rgba(0, 255, 255, 0.06);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.user-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 50px rgba(0, 255, 255, 0.12);
+  border-color: rgba(0, 255, 255, 0.32);
+}
+
+.user-card h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #00e6e6;
+  margin-bottom: 6px;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+.user-card p {
+  color: #d7ffff;
+  font-size: 14px;
+  margin-bottom: 6px;
+  line-height: 1.25;
+  word-break: break-word;
+}
+
+/* ================================
+   STATUS BADGES (use classes in JSX)
+   e.g. <div className={`status-badge ${user.status}`}>...
+================================ */
+
+.status-badge {
+  margin-top: 8px;
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 999px;
+  width: fit-content;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #042024;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+/* semantic classes (match server status strings: Approved, Rejected, Pending) */
+.status-badge.Approved,
+.status-badge.approved {
+  color: #002b1f;
+  background: linear-gradient(90deg, #b6f0d8, #00e6a0);
+  box-shadow: 0 8px 30px rgba(0, 230, 160, 0.12);
+}
+
+.status-badge.Rejected,
+.status-badge.rejected {
+  color: #3b0000;
+  background: linear-gradient(90deg, #ffb6b6, #ff6b6b);
+  box-shadow: 0 8px 30px rgba(255, 107, 107, 0.12);
+}
+
+.status-badge.Pending,
+.status-badge.pending {
+  color: #3a2a05;
+  background: linear-gradient(90deg, #fff0c6, #ffd36b);
+  box-shadow: 0 8px 30px rgba(255, 211, 107, 0.08);
+}
+
+/* fallback small pill */
+.status-badge.unknown {
+  background: rgba(255,255,255,0.12);
+  color: #cfefff;
+}
+
+/* ================================
+   BUTTON ROW
+================================ */
+
+.card-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform .18s ease, box-shadow .18s ease, opacity .18s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #fff;
+  min-height: 44px;
+}
+
+/* specific button styles */
+.btn.view {
+  background: linear-gradient(135deg, #0984e3, #00a8ff);
+  box-shadow: 0 8px 26px rgba(0, 168, 255, 0.12);
+}
+
+.btn.approve {
+  background: linear-gradient(135deg, #00b894, #00e6a8);
+  box-shadow: 0 8px 26px rgba(0, 230, 160, 0.12);
+  color: #02392c;
+}
+
+.btn.reject {
+  background: linear-gradient(135deg, #b81d42, #ff4b5c);
+  box-shadow: 0 8px 26px rgba(255, 75, 92, 0.12);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  opacity: 0.98;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.35);
+}
+
+.btn:focus {
+  outline: 3px solid rgba(0, 230, 255, 0.12);
+  outline-offset: 2px;
+}
+
+/* ================================
+   NO DATA TEXT
+================================ */
+
+.no-records {
+  text-align: center;
+  margin-top: 40px;
+  color: #b3e5e5;
+  font-size: 18px;
+}
+
+/* ================================
+   LOADING SCREEN
+================================ */
+
+.loading-screen {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  color: #aeeef0;
+}
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  color: #00ffff;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================================
+   MODAL STYLES
+================================ */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 18px;
+  z-index: 9999;
+}
+
+.modal-box {
+  width: 100%;
+  max-width: 980px;
+  background: linear-gradient(180deg, rgba(2,6,23,0.75), rgba(2,6,23,0.65));
+  border: 1px solid rgba(0, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 12px 70px rgba(0, 255, 255, 0.08);
+  animation: fadeIn 0.28s ease;
+  color: #fff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-9px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.06);
+  padding-bottom: 12px;
+}
+
+.modal-header h2 {
+  font-size: 20px;
+  color: #00e6e6;
+}
+
+.modal-header button {
+  background: none;
+  border: none;
+  color: #ff7b7b;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* modal content */
+.modal-content {
+  margin-top: 16px;
+  font-size: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.modal-content p {
+  margin-bottom: 8px;
+  color: #dff8f6;
+}
+
+.ocr-box {
+  grid-column: 1 / -1;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(0, 255, 255, 0.03);
+  border: 1px solid rgba(0, 255, 255, 0.06);
+}
+
+.ocr-box h3 {
+  color: #00e6e6;
+  margin-bottom: 8px;
+}
+
+.ocr-box pre {
+  font-size: 13px;
+  color: #d3ffff;
+  white-space: pre-wrap;
+  max-height: 260px;
+  overflow: auto;
+  padding-right: 6px;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 920px) {
+  .modal-content {
+    grid-template-columns: 1fr;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+  }
+
+  .user-card {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .card-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .ocr-box pre {
+    max-height: 180px;
+  }
+}
+
+/* ================================
+   SMALL UTILITIES
+================================ */
+
+.text-muted {
+  color: rgba(200, 255, 255, 0.6);
+  font-size: 13px;
+}
+
+.kv {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}

@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ---------- PAGE WRAPPER ---------- */
+.kyc-upload {
+  padding: 40px;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #001f3f, #000);
+  color: #fff;
+}
+
+/* ---------- TITLE ---------- */
+.kyc-upload h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #00e6e6;
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.8);
+  margin-bottom: 30px;
+}
+
+/* ---------- TABLE WRAPPER ---------- */
+.kyc-table-wrapper {
+  overflow-x: auto;
+  border-radius: 20px;
+  padding: 25px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+}
+
+/* ---------- TABLE ---------- */
+.kyc-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #eaffff;
+}
+
+.kyc-table th,
+.kyc-table td {
+  padding: 16px 14px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.15);
+}
+
+/* ---------- TABLE HEADER ---------- */
+.kyc-table th {
+  background: rgba(0, 255, 255, 0.08);
+  color: #00e6e6;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+  font-size: 15px;
+  border-bottom: 2px solid rgba(0, 255, 255, 0.25);
+}
+
+/* ---------- ROW EFFECT ---------- */
+.kyc-table tr {
+  transition: 0.25s ease;
+}
+
+.kyc-table tr:hover {
+  background: rgba(0, 255, 255, 0.07);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.25);
+}
+
+/* ---------- STATUS TAGS ---------- */
+.status-tag {
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 13px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-approved {
+  background: rgba(0, 255, 150, 0.25);
+  color: #00ff9d;
+  box-shadow: 0 0 10px rgba(0, 255, 150, 0.45);
+}
+
+.status-pending {
+  background: rgba(0, 150, 255, 0.25);
+  color: #00c3ff;
+  box-shadow: 0 0 10px rgba(0, 150, 255, 0.45);
+}
+
+.status-rejected {
+  background: rgba(255, 80, 80, 0.25);
+  color: #ff5b5b;
+  box-shadow: 0 0 10px rgba(255, 80, 80, 0.45);
+}
+
+/* ---------- FRAUD SCORE COLORS ---------- */
+.fraud-high {
+  color: #ff4b4b;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255, 60, 60, 0.8);
+}
+
+.fraud-medium {
+  color: #ffc400;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255, 196, 0, 0.8);
+}
+
+.fraud-low {
+  color: #00ffbf;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(0, 255, 191, 0.8);
+}
+
+/* ---------- VIEW BUTTON ---------- */
+.view-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(45deg, #0984e3, #00a8ff);
+  box-shadow: 0 0 20px rgba(0, 180, 255, 0.4);
+  transition: 0.3s ease;
+}
+
+.view-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(0, 180, 255, 0.7);
+}
+
+/* ---------- EMPTY STATE ---------- */
+.no-kyc {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #b3e5e5;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 780px) {
+  .kyc-upload {
+    padding: 20px;
+  }
+
+  .kyc-upload h2 {
+    font-size: 22px;
+  }
+
+  .kyc-table th,
+  .kyc-table td {
+    padding: 12px 10px;
+    font-size: 13px;
+  }
+
+  .view-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}

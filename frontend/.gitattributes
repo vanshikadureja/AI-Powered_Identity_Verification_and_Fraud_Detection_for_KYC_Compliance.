@@ -1,0 +1,4 @@
+SecureKycTeamB[[:space:]](2)/*.h5 filter=lfs diff=lfs merge=lfs -text
+SecureKycTeamB[[:space:]](2)/*.pt filter=lfs diff=lfs merge=lfs -text
+SecureKycTeamB[[:space:]](2)/*.pkl filter=lfs diff=lfs merge=lfs -text
+SecureKycTeamB[[:space:]](2)/* filter=lfs diff=lfs merge=lfs -text

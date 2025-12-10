@@ -1,0 +1,36 @@
+.navbar-container {
+  width: 100%;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #001428;
+  border-bottom: 1px solid rgba(0, 230, 230, 0.2);
+}
+
+.nav-links {
+  display: flex;
+  gap: 14px;
+}
+
+.nav-item {
+  padding: 8px 14px;
+  color: #9feeff;
+  text-decoration: none;
+  background: rgba(0, 230, 230, 0.08);
+  border-radius: 8px;
+  transition: 0.2s ease;
+}
+
+.nav-item:hover {
+  background: rgba(0, 230, 230, 0.25);
+  color: #fff;
+}
+
+.logout-btn {
+  background: rgba(255, 70, 70, 0.25);
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: #ffb3b3;
+  cursor: pointer;
+}

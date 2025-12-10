@@ -1,0 +1,157 @@
+/* === Make KYC Requests use same SecureKYC neon theme as Fraud Alerts ===
+   Paste this at the end of your existing FraudAlerts CSS (it will apply the
+   same styles to .kyc-requests-page without duplicating everything).
+*/
+
+/* page base */
+.fraud-alerts-page, .kyc-requests-page {
+  min-height:100vh;
+  padding:28px;
+  background: linear-gradient(180deg,#001428,#000);
+  color:#eafaff;
+  font-family:'Poppins',sans-serif;
+}
+
+/* topbar */
+.fraud-alerts-page .topbar,
+.kyc-requests-page .topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:20px;
+}
+.fraud-alerts-page .brand, .kyc-requests-page .brand{ display:flex; gap:10px; align-items:center; }
+.fraud-alerts-page .brand .shield, .kyc-requests-page .brand .shield{ font-size:20px; }
+.fraud-alerts-page .brand-text, .kyc-requests-page .brand-text{ color:var(--neon); font-weight:700; font-size:18px; }
+
+/* nav */
+.fraud-alerts-page .nav-row, .kyc-requests-page .nav-row{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  width:100%;
+  margin-left:16px;
+}
+.fraud-alerts-page .nav-row .nav-link,
+.kyc-requests-page .nav-row .nav-link{
+  flex:1;
+  text-align:center;
+  padding:10px 14px;
+  border-radius:10px;
+  background:rgba(0,230,230,0.06);
+  border:1px solid rgba(0,230,230,0.08);
+  color:#9feeff;
+  font-weight:700;
+  cursor:pointer;
+}
+.fraud-alerts-page .nav-row .nav-link.active,
+.kyc-requests-page .nav-row .nav-link.active,
+.fraud-alerts-page .nav-row .nav-link:hover,
+.kyc-requests-page .nav-row .nav-link:hover{
+  background:rgba(0,230,230,0.18);
+  border-color:var(--neon);
+  color:#fff;
+  box-shadow:0 0 12px rgba(0,230,230,0.18);
+}
+.fraud-alerts-page .logout, .kyc-requests-page .logout{
+  padding:10px 14px;
+  border-radius:10px;
+  background:rgba(255,60,70,0.18);
+  border:1px solid rgba(255,60,70,0.3);
+  color:#ff8b94;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* hero */
+.fraud-alerts-page .hero, .kyc-requests-page .hero{ display:flex; align-items:center; gap:12px; margin-bottom:18px; }
+.fraud-alerts-page .hero-icon, .kyc-requests-page .hero-icon{ font-size:28px; }
+.fraud-alerts-page .hero-text h1, .kyc-requests-page .hero-text h1{ margin:0; font-size:20px; font-weight:700; }
+.fraud-alerts-page .hero-text .muted, .kyc-requests-page .hero-text .muted{ color:var(--muted); margin-top:6px; font-size:13px; }
+
+/* stat cards */
+.fraud-alerts-page .stat-cards, .kyc-requests-page .stat-cards{ display:flex; gap:16px; margin-bottom:18px; flex-wrap:wrap; }
+.fraud-alerts-page .stat-card, .kyc-requests-page .stat-card{
+  min-width:180px;
+  flex:1;
+  background:rgba(255,255,255,0.02);
+  border:1px solid var(--card-border);
+  padding:14px;
+  border-radius:12px;
+  box-shadow:0 8px 28px rgba(0,0,0,0.6);
+}
+.fraud-alerts-page .stat-title, .kyc-requests-page .stat-title{ color:var(--neon); font-weight:700; margin-bottom:8px; }
+.fraud-alerts-page .stat-value, .kyc-requests-page .stat-value{ font-size:22px; font-weight:800; color:#fff; }
+
+/* controls row */
+.fraud-alerts-page .controls, .kyc-requests-page .controls{ display:flex; gap:12px; align-items:center; margin:18px 0; }
+.fraud-alerts-page .search-box input, .kyc-requests-page .search-box input{
+  width:640px; max-width:60%; padding:12px 14px; border-radius:10px; background:rgba(0,0,0,0.45);
+  border:1px solid rgba(255,255,255,0.03); color:#eafaff; outline:none;
+}
+.fraud-alerts-page .search-box input::placeholder, .kyc-requests-page .search-box input::placeholder{ color:var(--muted); }
+.fraud-alerts-page .filters, .kyc-requests-page .filters{ display:flex; gap:12px; align-items:center; margin-left:auto; }
+.fraud-alerts-page .filters select, .kyc-requests-page .filters select{
+  padding:10px 12px; border-radius:10px; background:rgba(0,0,0,0.45); border:1px solid rgba(255,255,255,0.03); color:#eafaff; font-weight:700;
+}
+.fraud-alerts-page .btn.export, .kyc-requests-page .btn.export{
+  padding:10px 14px; border-radius:10px; background:linear-gradient(45deg,#f59e0b,#ffb86b); border:none; color:#08220a; font-weight:800; cursor:pointer;
+  box-shadow:0 6px 18px rgba(245,158,11,0.12);
+}
+
+/* table */
+.fraud-alerts-page .alerts-table, .kyc-requests-page .alerts-table{ margin-top:12px; background:transparent; }
+.fraud-alerts-page .table-head, .kyc-requests-page .table-head{
+  display:grid;
+  grid-template-columns: 220px 120px 1fr 140px 200px 120px;
+  gap:12px;
+  padding:12px 16px;
+  border-radius:10px;
+  background:rgba(255,255,255,0.02);
+  border:1px solid rgba(255,255,255,0.03);
+  color:var(--muted);
+  font-weight:700;
+  margin-bottom:8px;
+}
+.fraud-alerts-page .table-body, .kyc-requests-page .table-body{ display:flex; flex-direction:column; gap:10px; }
+
+/* row */
+.fraud-alerts-page .row, .kyc-requests-page .row{
+  display:grid;
+  grid-template-columns: 220px 120px 1fr 140px 200px 120px;
+  gap:12px;
+  align-items:start;
+  padding:14px 16px;
+  background:rgba(0,0,0,0.45);
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.03);
+}
+.fraud-alerts-page .row.loading, .kyc-requests-page .row.loading, .fraud-alerts-page .row.empty, .kyc-requests-page .row.empty{ justify-content:center; color:var(--muted); }
+
+/* cell styles */
+.fraud-alerts-page .cell, .kyc-requests-page .cell{ font-size:14px; color:#eafaff; }
+.fraud-alerts-page .cell.mono, .kyc-requests-page .cell.mono{ font-family:monospace; color:#cfeff1; }
+.fraud-alerts-page .cell.reason, .kyc-requests-page .cell.reason{ color:#d8f7f7; }
+
+/* badges */
+.fraud-alerts-page .badge, .kyc-requests-page .badge{ display:inline-block; padding:6px 10px; border-radius:999px; font-weight:800; }
+.fraud-alerts-page .badge-high, .kyc-requests-page .badge-high{ background:rgba(239,68,68,0.12); color:#EF4444; border:1px solid rgba(239,68,68,0.06); }
+.fraud-alerts-page .badge-medium, .kyc-requests-page .badge-medium{ background:rgba(245,158,11,0.09); color:#F59E0B; border:1px solid rgba(245,158,11,0.06); }
+.fraud-alerts-page .badge-low, .kyc-requests-page .badge-low{ background:rgba(16,185,129,0.09); color:#10B981; border:1px solid rgba(16,185,129,0.06); }
+
+/* responsive adjustments */
+@media(max-width:1200px){
+  .fraud-alerts-page .table-head, .kyc-requests-page .table-head,
+  .fraud-alerts-page .row, .kyc-requests-page .row{ grid-template-columns: 1fr 100px 1fr 120px 140px 100px; }
+  .fraud-alerts-page .search-box input, .kyc-requests-page .search-box input{ max-width:55%; }
+}
+@media(max-width:900px){
+  .fraud-alerts-page .controls, .kyc-requests-page .controls{ flex-direction:column; align-items:stretch; }
+  .fraud-alerts-page .search-box input, .kyc-requests-page .search-box input{ width:100%; max-width:100%; }
+  .fraud-alerts-page .filters, .kyc-requests-page .filters{ width:100%; justify-content:space-between; }
+  .fraud-alerts-page .table-head, .kyc-requests-page .table-head,
+  .fraud-alerts-page .row, .kyc-requests-page .row{ grid-template-columns: 1fr 100px; grid-auto-flow:row; row-gap:8px; }
+  .fraud-alerts-page .table-head .th.reason, .fraud-alerts-page .row .cell.reason,
+  .kyc-requests-page .table-head .th.reason, .kyc-requests-page .row .cell.reason{ grid-column:1 / -1; }
+}
